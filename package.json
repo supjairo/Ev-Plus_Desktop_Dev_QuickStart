@@ -1,0 +1,57 @@
+{
+  "name": "Ev-Plus",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "V-serve": "vue-cli-service serve",
+    "V-build": "vue-cli-service build",
+    "V-lint": "vue-cli-service lint",
+    "electron:serve": "npm run icon-dev && vue-cli-service electron:serve",
+    "electron:build": "npm run icon-build && vue-cli-service electron:build",
+    "postinstall": "electron-builder install-app-deps",
+    "postuninstall": "electron-builder install-app-deps",
+    "icon-dev": "electron-icon-builder --input=./public/icon.png --output=./public --flatten",
+    "icon-build": "electron-icon-builder --input=./public/icon.png --output=build --flatten"
+  },
+  "main": "background.js",
+  "dependencies": {
+    "@electron/remote": "^2.0.8",
+    "core-js": "^3.8.3",
+    "path-browserify": "^1.0.1",
+    "vue": "^3.2.13",
+    "vue-router": "^4.1.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.16",
+    "@babel/eslint-parser": "^7.12.16",
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-plugin-eslint": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "electron": "^13.0.0",
+    "electron-devtools-installer": "^3.1.0",
+    "electron-icon-builder": "^2.0.1",
+    "eslint": "^7.32.0",
+    "eslint-plugin-vue": "^8.0.3",
+    "vue-cli-plugin-electron-builder": "~2.1.1"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/vue3-essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "@babel/eslint-parser"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ]
+}
